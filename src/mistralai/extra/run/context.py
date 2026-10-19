@@ -327,7 +327,7 @@ async def _validate_run(
                 input_entries.append(
                     pydantic.TypeAdapter(InputEntries).validate_python(input)
                 )
-            elif isinstance(input, FunctionResultEntry):
+            else:
                 input_entries.append(input)
     run_result = RunResult(
         input_entries=input_entries,
